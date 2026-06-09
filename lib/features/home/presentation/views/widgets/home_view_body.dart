@@ -19,6 +19,34 @@ class HomeViewBody extends StatelessWidget {
           FeaturedBookListView(),
           SizedBox(height: 50),
           Text('Best Seller', style: Stayles.titleMedium),
+          BestSellerListViewItem(),
+        ],
+      ),
+    );
+  }
+}
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(AssetsData.test),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
