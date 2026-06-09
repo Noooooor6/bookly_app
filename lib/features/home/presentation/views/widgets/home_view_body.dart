@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
           CustomAppBar(),
           FeaturedBookListView(),
           SizedBox(height: 50),
-          Text('Best Seller', style: Stayles.titleMedium),
+          Text('Best Seller', style: Stayles.textStyle18),
           BestSellerListViewItem(),
         ],
       ),
@@ -32,7 +32,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 125,
       child: Row(
         children: [
           AspectRatio(
