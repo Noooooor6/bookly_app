@@ -1,11 +1,10 @@
 import 'package:bookly_app/constans.dart';
 import 'package:flutter/rendering.dart';
 
-abstract class Stayles {
+abstract class Styles {
   static const textStyle20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    fontFamily: KGTSectraFine,
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
