@@ -6,18 +6,21 @@ class CustomBookDetailesAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(FontAwesomeIcons.xmark, color: Colors.white),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(FontAwesomeIcons.cartShopping, color: Colors.white),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 25, bottom: 25),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(FontAwesomeIcons.xmark, color: Colors.white),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(FontAwesomeIcons.cartShopping, color: Colors.white),
+          ),
+        ],
+      ),
     );
   }
 }
