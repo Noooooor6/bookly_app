@@ -16,13 +16,19 @@ class SimilerBooksListView extends StatelessWidget {
         builder: (context, state) {
           if (state is SimilerBooksSuccess) {
             return ListView.builder(
+              itemCount: state.bookModel.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CustomBookImage(
                     imageUrl:
-                        "http://books.google.com/books/content?id=otw9AQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+                        state
+                            .bookModel[index]
+                            .volumeInfo
+                            .imageLinks
+                            ?.thumbnail ??
+                        '',
                   ),
                 );
               },
