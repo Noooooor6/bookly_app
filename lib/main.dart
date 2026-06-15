@@ -2,7 +2,7 @@ import 'package:bookly_app/constans.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/services_locator.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entities.dart';
-import 'package:bookly_app/features/home/domain/repos/home_repo_impl.dart';
+import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +13,11 @@ import 'package:hive_flutter/adapters.dart';
 void main() async {
   SetUpServicesLocator();
   runApp(const MyApp());
-
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntitiesAdapter());
-  await Hive.openBox(kFeaturedBox);
+  await Hive.openBox<BookEntities>(kFeaturedBox);
+  await Hive.openBox<BookEntities>(kNewestBox);
+  await Hive.openBox<BookEntities>(kSimilerBox);
 }
 
 class MyApp extends StatelessWidget {
