@@ -1,3 +1,4 @@
+import 'package:bookly_app/constans.dart';
 import 'package:dio/dio.dart';
 
 class ApiServices {
@@ -6,7 +7,7 @@ class ApiServices {
   ApiServices({required this.dio});
 
   Future<Map<String, dynamic>> get({required String endPoints}) async {
-    var response = await dio.get('$_baseUrl$endPoints');
+    var response = await dio.get('$_baseUrl$endPoints$apiKey');
 
     return response.data;
   }
